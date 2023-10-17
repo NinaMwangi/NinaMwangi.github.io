@@ -1,35 +1,91 @@
 <!doctype html>
-
-<!-- this is a comment for human! -->
-
 <html lang="en">
-
-  <header>
-    <title>Nina Mwangi's Portal</title>
+<head>
+    <title>Nina Mwangi</title>
     <link rel="stylesheet" href="css/master.css">
     <link rel="FaviconIcon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut" href="favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="name" content="Nina Mwangi's Portal">
-    <meta name="robots" conten="noindex, nofollow">
-  </header>
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <div id = "header">
+    <div class="container">
+      <nav>
+        <img src="images/logo.png" class="logo">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>Software Engineer</p>
+        <h1>Hi there, My name is <span>Nina</span><br> Mwangi from Kenya</h1>
+      </div>
+    </div>
+  </div>
+  <!-- --------------About----------------- -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="/images/User.png">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About me</h1>
+          <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p1>
+          
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>Data Engineering</span><br>Big data management</li>
+              <li><span>Web development</span><br>Web app development</li>
+              <li><span>Machine Learning</span><br>Designing predictive models and algorithms</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>2019 - 2022</span><br>Customer Experience Analyst</li>
+              <li><span>2014 - 2019</span><br>Credit Control Analyst</li>
+              <li><span>Machine Learning</span><br>Designing predictive models and algorithms</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2022 - current</span><br>BSc. Software Engineering</li>
+              <li><span>2023</span><br>IBM Data Engineering Certificate</li>
+              <li><span>2022</span><br>Google data analytics Certificate</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <body>
-    <img src="images/banner.jpg" width="75%" alt="banner">
-    <h1>Nina Mwangi's Portal</h1>
-    <h2>About Me</h2>
-    <p>I am frontend developer in Nairobi.</p>
-    <p> I am a Software Engineering Student at African Leadership University.</p>
-    <p> I am in my 1st year of school.</p>
-    <h2>Credentials and Portfolio</h2>
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
 
-    <p><a href="resume.html">My Resume</a> |<a href="https://github.com/NinaMwangi">My GitHub</a></p>
-    <h2>Contact</h2>
-
-    <p>Email: <a href="mailto:n.mwangi@alustudent.com">n.mwangi@alustudent.com</a></p>
-
-
-  </body>
+    function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+</body>
 
   <footer>
 
